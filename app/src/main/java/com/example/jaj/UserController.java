@@ -21,6 +21,7 @@ public class UserController {
 
 
 
+    @SuppressLint("Range")
     public byte[] profileImage(String email, Context context) {
         SQLiteDatabase db = SQLiteConnection.getDatabase(context);
         byte[] imgData = null;
