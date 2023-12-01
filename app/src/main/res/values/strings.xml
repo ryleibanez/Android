@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JAJ</string>
+
+    <string-array name="gender_array">
+        <item>Select Your Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <!-- You can add more gender options if needed -->
+    </string-array>
+</resources>
