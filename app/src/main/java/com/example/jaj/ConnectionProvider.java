@@ -13,8 +13,7 @@ public class ConnectionProvider {
 //    private static String username = "u113czxob0lgt7u"; // Example: "yourusername"
 //    private static String password = "FQZu6IJrbLQTjYqX1P5ghFCTU"; // Example: "yourpassword"
 
-
-    private static String serverName = "192.168.68.114"; // Example: "yourserver.database.windows.net"
+    private static String serverName = "192.168.1.4"; // Example: "yourserver.database.windows.net"
     private static String databaseName = "JAJ4"; // Example: "yourdb"
     private static String username = "mylogin"; // Example: "yourusername"
     private static String password = "!Godofwar2"; // Example: "yourpassword"
