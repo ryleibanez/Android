@@ -30,15 +30,15 @@ public class trainingController {
 
 
             while (cursor.moveToNext()) {
-
+                String insId = cursor.getString(cursor.getColumnIndex("InstructorId"));
                 String query1 = "SELECT InsFirstName || ' ' || InsLastName AS name FROM Instructor WHERE InstructorId=?";
-                Cursor instructor = db.rawQuery(query1, new String[]{tid});
+                Cursor instructor = db.rawQuery(query1, new String[]{insId});
 
 
 
                 while (instructor.moveToNext()) {
 
-                    str = instructor.getString(cursor.getColumnIndex("name"));
+                    str = instructor.getString(instructor.getColumnIndex("name"));
 
                 }
 

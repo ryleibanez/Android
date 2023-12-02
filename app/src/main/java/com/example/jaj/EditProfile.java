@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class EditProfile extends AppCompatActivity {
 
@@ -90,6 +91,27 @@ private AppCompatButton btnSave;
                 String phone = txtPhoneNumber.getText().toString().trim();
                 String dob = editTextDateOfBirth.getText().toString();
 
+                String dobString = editTextDateOfBirth.getText().toString();
+
+// Define the input format
+                SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-d", Locale.US);
+
+// Parse the input date string
+                Date dobDate;
+                try {
+                    dobDate = inputFormat.parse(dobString);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    // Handle the parse exception as needed
+                    return;
+                }
+
+// Define the desired output format
+                SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+
+// Format the date to the desired output format
+                String formattedDob = outputFormat.format(dobDate);
+
                 String gender = spinnerGender.getSelectedItem().toString();
 
 
@@ -150,7 +172,7 @@ private AppCompatButton btnSave;
                 }
                 SessionController session = new SessionController(getApplicationContext());
 
-                boolean check = users.updateInfo(fname,lname,session.getUserEmail(),address,phone,dob,gender, getApplicationContext());
+                boolean check = users.updateInfo(fname,lname,session.getUserEmail(),address,phone,formattedDob,gender, getApplicationContext());
                 Toast.makeText(EditProfile.this, "Please Wait...", Toast.LENGTH_SHORT).show();
                 if(check){
                     Toast.makeText(EditProfile.this, "Profile Information Has Been Changed Successfully!", Toast.LENGTH_SHORT).show();
